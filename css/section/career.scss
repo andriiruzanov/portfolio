@@ -1,0 +1,187 @@
+.career {
+	@extend %clearfix;
+}
+
+.career__left {
+	width: rem(220px);
+	float:left;
+
+
+	@include laptop {
+		text-align: center;
+		width: 100%;
+		float: none;
+		margin-bottom: 20px;
+	}
+}
+
+.career__right {
+	width: rem(450px);
+	float:right;
+
+	@include laptop {
+		text-align: center;
+		width: 100%;
+		float: none;
+	}
+}
+
+.career__pic {
+	width: 220px;
+	height: 220px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	@include border-radius(9px);
+	position: relative;
+
+	@include laptop {
+		margin: 0 auto;
+	}
+
+}
+
+.ava-fake {    // для SEO  (можно убрать)
+	position: absolute;
+	top: 0;
+	left: -9999px;
+
+}
+
+.career__list{
+	
+}
+
+.career__item {
+	text-align: right;
+	margin-bottom: 20px; //делаем отступ от внешнего блока, а не от внутреннего!
+
+	&:first-child {
+		.career__block {
+			&:before {
+				display: none;
+			}
+		}
+	}
+
+		
+	&:last-child {
+		.career__block {
+			&:after {
+				display: none;
+			}
+		}
+	}
+
+	@include laptop {
+		text-align: center;
+	}
+}
+
+.career__item { // делаем подсветку при наведении 
+	
+	&:hover * {
+    color: #fff;
+	}
+
+	&:hover {
+		.career__block{
+			background: #33c1e3;
+		}
+			
+		.career__year {
+			color: #33c1e3;
+			font-weight: bold;
+
+			&:after {
+				border-color: #94e0f2;
+			}
+		}
+	}
+}
+
+
+
+.career__block {
+	display: inline-block;
+	width: 380px;
+	
+	@include border-radius(9px);
+	@include box-shadow(0 1px 3px 0 rgba(#000, .2));
+	position: relative;
+	text-align: left;
+	padding: 15px;
+	transition: .3s;  
+
+	&:before, &:after {
+		content:"";
+		display: block;
+		width: 1px;
+		background: #dddddd;
+		position: absolute;
+		left: -30px;
+
+		@include tablets {
+		display: none;
+	}
+	}
+
+	&:before{
+		top: 0;
+		bottom: 50%;
+		margin-bottom: 5px; //раздвигаем
+	}
+
+	&:after{
+		top: 50%;
+		bottom: -22px;
+		margin-top: 5px; //раздвигаем
+	}
+
+	@include tablets {
+		width: 100%;
+		text-align: left;
+	}
+
+}
+
+
+	
+
+.career__year {
+	position: absolute;
+	right: 100%; // можно left: -85px, но тогда если текста будет много развалится верстка
+	top: 50%;
+	line-height: 14px; //задаем высоту строки для отцентровки
+	margin-top: -8px; //чтобы отцентровать берем половину line-height с минусом (14/2=8px)
+	margin-right: 45px;
+	color: #727272;
+
+	&:after {
+		content: "";
+		width: 10px;
+		height: 10px;
+		background: #33c1e3;
+		border-radius: 50%;
+		position: absolute;
+		right: -25px;
+		top: 50%;
+		margin-top: -10px; //отцентровываем половина высоты height (10/2=5) 
+		z-index: 1;	
+		border: 5px solid #f6f6f6;
+	}
+
+	@include tablets {
+		display: none;  //скрываем псевдоэлемент на планшетах
+	}
+}
+
+.career__title {
+	font-size: rem(21px);
+    color: #5a5a5a;
+    margin-bottom: rem(5px);
+}
+
+.career__occupation, .career__date {
+	font-size: 18px;
+	@include fira(light);
+}

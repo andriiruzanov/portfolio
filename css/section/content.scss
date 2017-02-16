@@ -1,0 +1,171 @@
+.wrapper {
+	
+	@include desktop {
+		min-width: 0px;
+	}
+}
+.stuff{
+	width: rem(710px);
+	float: right;
+
+	@include laptop {
+		width: rem(500px);
+	}
+
+	@include tablets {
+		width: 100%;
+		float: none;
+	}
+
+	
+}
+
+.content{
+	.container{
+		@extend %clearfix;
+	}
+}	
+
+.container {
+	
+	position: relative;
+
+	@include phones {   //для выравнивания блоков с портфолио
+		width: 96%;
+    	padding: 0;
+	}
+
+
+}
+
+.sidebar{
+	width: rem(220px);
+	float: left;
+
+	@include tablets {
+		width: 100%;
+		float: none;
+		margin-bottom: rem(35px);
+	}
+	
+	@include phones {
+		margin: auto;
+	}
+}
+
+.nav__list {
+	text-align: right;
+
+	
+	@include tablets {
+		text-align: center;
+	}
+
+	@include phones {   // в теме про выравнивание меню Верстка №3
+		
+		
+		width: 100%;
+		text-align: justify;
+
+		&:after {
+			content: "";
+			display: inline-block;
+			width: 100%;
+			height: 0;
+		}
+		
+	}
+}
+
+
+
+.nav__item {
+	
+
+	@include tablets {
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: rem(30px);
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+	@include phones {
+			
+			margin-left: 0;
+		}
+
+}
+
+
+.nav__link{
+	display: block;
+	padding: rem(10px) rem(20px) rem(10px) 0;
+	text-align: right;
+	border-right: rem(6px) solid transparent;
+	text-decoration: none;
+	color: $black;
+	font-size: rem(18px);
+	transition: 0.5s;
+
+	@include tablets {
+		padding: 0;
+		border: 0;
+
+
+	}
+	@include phones {
+		font-size: 13px;
+	}
+
+	&:hover{
+		color: $blue;
+	}
+	
+	&:active {
+		border-color: $blue;
+	
+		@include tablets {		
+			border: none;
+			
+		}
+		
+
+
+	}
+}
+
+.nav__item_active {
+	.nav__link {
+		border-color: $blue;
+		color: $blue;
+
+		@include tablets {
+			border: none;
+			@include fira(bold);
+		}
+	
+	}
+}
+
+/*-------2-ой способ отображения псевокартинки------*/ // -это убрать из  HTML <i class="fa fa-user-secret nav__link-icon"></i> <i class="fa fa-rocket nav__link-icon"></i> <i class="fa fa-briefcase nav__link-icon"></i>   и вставить стили ниже
+ 
+// .nav__link_user-secret{
+// 	&:before{
+// 		font-family: 'FontAwesome';
+// 		content: "\f21b";
+// 	}
+// }
+
+// .nav__link_rocket{
+// 	&:before{
+// 		font-family: 'FontAwesome';
+// 		content: "\f135";
+// 	}
+// }
+
+// .nav__link-text {
+// 	@include phones {
+// 		font-size: 14px;
+// 	}
+// }

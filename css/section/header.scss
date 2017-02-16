@@ -1,0 +1,254 @@
+.header {
+	background: #fff;
+	@include box-shadow(0 1px 3px 0 rgba(#000, .2));
+	
+	
+	margin-bottom: 1.25rem; // 20px(было до адаптива) : 16px( это font-size у html)
+	
+  @include tablets {
+    margin-bottom: rem(35px);
+  }
+
+	.container {
+		height: 80px;
+		position: relative;
+		@extend %clearfix;
+	}
+}
+
+.header__left, .header__right {
+	float: left;
+	width: 50%;
+}
+
+
+
+.header__right {
+	text-align: right;
+}
+
+.user {
+	margin-top: 10px;
+
+}
+
+.user__avatar {
+	@include inlineblock(middle); // inline-block - чтобы обтянуло
+	overflow: hidden;
+	@include border-radius(50%);
+  width: 60px; // устанавливаем размер чтобы можно было установив код на 16 и 17 строке (max-height max-width) можно было исключить выход картинки за пределы этого блока .header__left
+  height: 60px; // устанавливаем размер чтобы можно было установив код на 16 и 17 строке (max-height max-width) можно было исключить выход картинки за пределы этого блока .header__left
+}
+
+.user__avatar-pic {
+	display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.user__name {
+
+	@include inlineblock(middle);
+	max-width: rem(250px);
+    font-size: rem(18px);
+    margin-left: rem(15px);
+
+    @include phones {
+    max-width: rem(100px);
+    width: 40%;
+    }
+}
+
+.contacts {
+	margin-top: 22px;
+ 	display: inline-block;
+  position: relative;
+
+
+  	&:hover .contacts__trigger {
+    background: url('../img/decor/dotted-border-hover.png') 0 bottom repeat-x;
+    color: #e85f61; 
+
+    @include tablets {
+
+      background: url('../img/icons/phone-active.png') center no-repeat;
+      
+    }
+	}
+    .contacts__trigger {
+      transition: 0.3s;
+
+      @include tablets {
+
+        background: url('../img/icons/phone.png') center no-repeat;
+      }
+
+    }
+
+
+
+
+    &:hover .contacts__dropdown {
+    display: block;
+    animation: fadeIn .8s; //плавное появление дропдауна
+     }
+
+    @keyframes fadeIn {
+      from { opacity: 0;
+    }
+      to { opacity: 1;
+    }
+  }
+}
+
+.contacts__trigger{
+  color: $blue;
+  text-decoration: none;
+  font-size: rem(18px);
+  line-height: rem(28px);
+  background: url('/img/decor/dotted-border.png') 0 bottom repeat-x;
+
+  @include tablets {
+
+    text-indent: 9999px;
+    display: inline-block; 
+    white-space: nowrap; //текст в одну строку, чтобы скрыть текст  "Мои контакты" за границами
+    width: 32px;  //чтобы было видно phone.png, т.к. картинка именно с размером 32на32, а все что болье этих размеров скроется благодаря white-space 
+    height: 32px; //чтобы было видно phone.png, т.к. картинка именно с размером 32на32, а все что болье этих размеров скроется благодаря white-space 
+  }
+}
+
+.contacts__dropdown {
+  padding: 15px 20px;
+  background: #fff;
+  border: 1px solid #dedede;
+  border-radius: 10px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  margin-top: 12px;
+  // display: none;
+  transition: border .3s;
+
+  @include desktop {
+    left: -22%;
+  }
+   
+   @include tablets {
+    left: -309%;
+  }
+  &:before {   //чтобы дропдаун не проподал при диагональном перемещении мыши на него
+  	content: "";
+  	position: absolute;
+  	left: 0;
+  	right: 0;
+  	height: 30px;
+  	top: -28px; 
+	}
+
+}
+
+.contacts__dropdown-triangle-list {
+
+
+  &:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-width: 0px;
+    top: -11px;
+    position: absolute;
+    left: 50%;
+    transform: rotate(0deg) skewY(0deg) skewx(-33deg);
+    border-bottom-color: #dedede; 
+  }
+
+    &:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-width: 0px;
+    top: -11px;
+    position: absolute;
+    left: 50%;
+    transform: rotate(0deg) skewY(0deg) skewx(-33deg);
+    border-bottom-color: #fff;
+    margin-top: 1px;
+    } 
+    
+
+    @include desktop {
+      left: 80%;
+    } 
+    @include tablets {
+      left: 85%;
+    }
+
+	}
+
+  	
+ //  	&:before {
+ //    border-bottom-color: #dedede; 
+	// }
+  	
+ //  	&:after {
+ //    border-bottom-color: #fff;
+ //    margin-top: 1px; 
+	// }
+
+
+
+.contacts__dropdown-link {
+	white-space: nowrap; // чтобы текст в одну строку ( не сбрасываоло на строку ниже не помещающийся текст) 
+	font-size: 18px;
+	font-family: "fira_sanslight";
+	color: #414141;
+	text-decoration: none;
+	text-align: left;
+	display: block;
+  
+
+ &:hover {
+  font-weight: bold;
+  @include transition(font-weight .3s);
+ }
+
+   &:hover .contacts__dropdown-icon {
+    text-shadow: 1px 1px 0px $grey;
+    
+    @include transition(text-shadow .3s);
+
+
+   }
+}
+
+
+.contacts__dropdown-icon {
+	color: #33c1e3;
+	margin-right: 15px;
+}
+
+.contacts__dropdown-item {
+	margin-bottom: 15px;
+  width: 250px; //чтобы не прыгало окно при hover
+
+
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+
+
+
+
+
+
+

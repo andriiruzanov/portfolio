@@ -1,0 +1,136 @@
+
+
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+
+//adaptive design
+
+  @include desktop {
+    font-size: 16px; // ширина контейнера должна быть меньше брейкпоинта (меньше 1200), но больше чем следующий брейкпоинт (992)
+  }
+
+  @include laptop {
+    font-size: 15px;
+    
+  }
+
+  @include tablets {
+    font-size: 14px;
+  
+  }
+   @include phones {
+    font-size: 13px;
+  
+  }
+ 
+}
+
+*, *:before, *:after {
+    box-sizing: inherit; // чтобы padding margin border не влияли на размер блока и не появлялось прокруток горизонтальных
+  }
+
+
+ 
+body, html {
+  width: 100%;
+  height: 100%; 
+}
+
+body {
+  font-family: $body-font;
+  line-height: 1.42; //В этом примере вместо высоты строки 142 % для элемента body лучше установить общий для всех элементов пропорциональный базовый межстрочный интервал в размере 1,42. Любой элемент, вместо того чтобы наследовать точное абсолютное значение высоты строки в пикселах от стиля body, умножает размер своего шрифта на этот коэффициент.
+  -webkit-font-smoothing: antialiased; 
+  background: $white;
+
+
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  position: relative;
+  // min-width: $container-width + 20px; - для адаптива ненужно
+}
+
+// для прибития футера через псевдоэлемент
+.wrapper:after {
+  content: "";
+  display: block;
+  height: $footer-height;
+  overflow: hidden; }
+
+.maincontent {
+  padding-bottom: 50px; }
+
+
+
+
+// для прибития футера
+
+footer {
+  background: red;
+  height: $footer-height;
+  width: 100%;
+  margin-top: -$footer-height;
+  position: relative;
+  min-width: $container-width + 20px; }
+
+
+//выравнивание по центру(одновременно и по ширине класса content) вне зависимости от размера экрана
+.container {
+  width: $container-width;
+  margin: 0 auto;
+  max-width: 1000px; 
+
+//adaptive design
+
+  @include desktop {
+    width: 992px; 
+    // ширина контейнера должна быть меньше брейкпоинта (меньше 1200), но больше чем следующий брейкпоинт (992)
+   
+  }
+
+
+  @include laptop {
+    width: 768px;
+    
+    
+        
+  }
+
+  @include tablets {
+    width: 460px;
+    padding: 0px 20px;
+  
+  }
+
+  @include phones {
+    width: auto;
+  
+  }
+
+
+}
+
+// удалить встроенное в браузер форматирование и добавить потом собственное
+ul {                
+  padding: 0;
+  margin: 0; 
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+// устойчивость верстки при изменении тегов сеошником
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-weight: normal;
+}

@@ -1,0 +1,103 @@
+.portfolio__list {
+	margin-left: -20px;
+	font-size: 0; // чтобы не крашился порядок и не вылезало ничего, -решение проблемы с непомещающимися инлайн-блоками (убираем отступы), но дочерним ставим font-size не 0px => строка 19
+
+	    @include tablets {
+			margin-left: -2%;
+		}
+		
+		@include phones {    
+			margin-left: 0;
+		}
+}
+
+.portfolio__item {
+	display: inline-block;
+
+	@include inlineblock (top); // чтобы отталкивались блоки вниз если идет переполнение блока
+
+	* {
+		font-size: 14px; // т.к. на строке 3 font-size: 0  
+	}
+	width: 220px;
+	@include border-radius(10px 9px 9px 10px);
+	@include box-shadow(0 1px 3px rgba(0, 0, 0, 0.2));
+	overflow: hidden;
+	margin-left: 20px;
+	margin-bottom: 20px;
+
+	@include tablets {
+		width: 48%;
+		margin-left: 2%;
+	}
+
+	@include phones {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	&:hover {
+		box-shadow: 0 4px 4px $grey;
+		transition: .3s;
+	}
+
+
+}
+
+.portfolio__link {
+	display: block;
+	text-decoration: none;
+}
+
+
+.portfolio__pic {
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	height: 175px;
+}
+
+.portfolio__desc-wrap {
+	background: #fff;
+	padding: 20px;
+}
+
+.portfolio__desc-title {
+	color: #33c1e3;
+	font-size: 21px;
+	line-height: 24px;
+	bottom: 5px;
+}
+
+.portfolio__desc-text {
+	color: #414141;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 16px;
+	margin-bottom: 17px;
+}
+
+.portfolio__desc-type {
+	color: #aeaeae;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.portfolio-icon {
+	display: inline-block;
+	@include inlineblock (middle);
+	width: 12%;
+	text-align: center;
+
+	@include phones {
+		width: 6%;
+		padding-right: rem(5px);
+	}
+}
+
+.portfolio-text {
+	display: inline-block;
+	@include inlineblock (middle);
+	width: 85%;
+	
+}

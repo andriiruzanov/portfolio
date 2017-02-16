@@ -1,0 +1,97 @@
+
+
+.footer {
+
+	background: #414141;
+	@include desktop {
+		min-width: 0px;
+	}
+
+	
+}
+
+
+.footer {
+
+	@include tablets {
+		height: 95px;
+    	margin-top: -95px;
+    	padding-top: 10px;
+	}
+}
+
+
+
+
+
+.footer__left, .footer__right {
+	
+	@include tablets {
+    	float: none;
+    	width: 100%;
+   }
+
+	
+}
+
+.footer__left {
+	@include tablets {
+		margin-bottom: 10px;
+	}
+}
+
+.copyright {
+	font-size: 14px;
+	line-height: 16px;
+	color: #9c9c9c;
+	position: absolute;
+	left: 0;
+	top: 18px;
+
+	@include tablets {
+    	position: static;
+    	text-align: center;
+  }
+}
+
+.footer__right{
+	text-align: right;
+}
+
+.socials__list {
+	position: absolute;
+	right: 0;
+	top: 10px;
+
+	@include tablets {
+    	position: static;
+    	text-align: center;
+	}
+
+}
+
+.socials__item {
+	display: inline-block;
+
+	
+}
+
+.socials__link {
+	width: 32px;
+	height: 30px;
+	display: block;
+}
+
+@each $social in (vk, fb, tw) {
+	.socials__link_#{$social} {
+		background: url('/img/icons/#{$social}.png') 0 0 no-repeat;
+		
+		@include transition( .6s);
+		
+		&:hover {
+			background: url('/img/icons/#{$social}-active.png') 0 0 no-repeat;
+		
+		@include transition( .6s);
+		}
+	}
+} 

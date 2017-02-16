@@ -1,0 +1,121 @@
+.about{
+	@extend %clearfix;
+	
+}
+
+.about__left{
+	width: rem(290px);
+	float:left;
+	text-align: center;
+
+	@include laptop {
+		width: rem(172px);
+		margin-left: -50px;
+	}
+
+	@include tablets {
+		width: 100%;
+		float: none;
+		margin: 0 auto rem(15px);
+
+		}
+
+}
+
+.about__right{
+	width: rem(400px);
+	float:right;
+
+	@include laptop {
+		width: rem(290px);
+
+	}
+
+	@include tablets {
+		width: 100%;
+		float: none;
+		}
+
+	
+}
+
+.about__pic {
+	width: 220px;
+	height: 220px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	@include border-radius(50%);
+	position: relative; //  у ava-fake position: absolute
+
+	@include laptop {
+		margin: 0 auto;
+	}
+
+}
+
+// .about__pic-img{
+// 	display: block;//чтобы можно было задать отступы
+// 	max-width: 100%; //чтобы картинка не вышла за пределы оборачивающего ее блока (родителя)
+// 	max-height: 100%; //чтобы картинка не вышла за пределы оборачивающего ее блока (родителя)
+// }
+
+.content-title{
+	font-size: rem(35px);
+	color: $black;
+	line-height: rem(38px);
+	margin-bottom: rem(25px);
+	@include fira(medium);
+
+	@include laptop {
+		text-align: center;
+	}
+}
+
+.about__text{
+	font-size: rem(18px);
+	margin-top: 0;
+	margin-bottom: rem(25px);
+	overflow: auto; // скрыть текст с прокруткой
+	height: rem(290px); //скрыть текст с прокруткой
+
+
+}
+
+.text-block {
+	color: #646464;
+	font-size: rem(18px);
+	line-height: 24px;
+	@include fira(light); 
+
+	p {
+		margin: 0;
+		margin-bottom: rem(10px);
+	}
+}
+
+.about__download {
+	text-align: right;
+
+
+	@include tablets {
+		text-align: center;
+	}
+}
+
+.about__download-link {
+	padding: rem(9px) rem(12px);
+	border: 2px solid $red;
+	color: $red;
+	text-decoration: none;
+	font-size: rem(14px);
+	display: inline-block;
+	transition: .3s;
+	@include border-radius(40px);
+
+	&:hover {
+		color: #fff;
+		background: $red;
+	}
+
+
+}
