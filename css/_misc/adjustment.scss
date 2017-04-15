@@ -7,7 +7,7 @@ html {
 //adaptive design
 
   @include desktop {
-    font-size: 16px; // ширина контейнера должна быть меньше брейкпоинта (меньше 1200), но больше чем следующий брейкпоинт (992)
+    font-size: 16px;
   }
 
   @include laptop {
@@ -27,7 +27,7 @@ html {
 }
 
 *, *:before, *:after {
-    box-sizing: inherit; // чтобы padding margin border не влияли на размер блока и не появлялось прокруток горизонтальных
+    box-sizing: inherit; 
   }
 
 
@@ -39,7 +39,7 @@ body, html {
 
 body {
   font-family: $body-font;
-  line-height: 1.42; //В этом примере вместо высоты строки 142 % для элемента body лучше установить общий для всех элементов пропорциональный базовый межстрочный интервал в размере 1,42. Любой элемент, вместо того чтобы наследовать точное абсолютное значение высоты строки в пикселах от стиля body, умножает размер своего шрифта на этот коэффициент.
+  line-height: 1.42; 
   -webkit-font-smoothing: antialiased; 
   background: $white;
 
@@ -50,7 +50,7 @@ body {
   min-height: 100%;
   overflow: hidden;
   position: relative;
-  // min-width: $container-width + 20px; - для адаптива ненужно
+  // min-width: $container-width + 20px; - для адаптива ненужно + если НЕТ адаптива, то убараем  meta(content="width=device-width, initial-scale=1" name="viewport")
 }
 
 // для прибития футера через псевдоэлемент
@@ -77,7 +77,7 @@ footer {
   min-width: $container-width + 20px; }
 
 
-//выравнивание по центру(одновременно и по ширине класса content) вне зависимости от размера экрана
+
 .container {
   width: $container-width;
   margin: 0 auto;
@@ -86,9 +86,7 @@ footer {
 //adaptive design
 
   @include desktop {
-    width: 992px; 
-    // ширина контейнера должна быть меньше брейкпоинта (меньше 1200), но больше чем следующий брейкпоинт (992)
-   
+    width: 992px;    
   }
 
 
@@ -113,7 +111,7 @@ footer {
 
 }
 
-// удалить встроенное в браузер форматирование и добавить потом собственное
+// tag styles reset
 ul {                
   padding: 0;
   margin: 0; 

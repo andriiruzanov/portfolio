@@ -1,6 +1,6 @@
 .portfolio__list {
 	margin-left: -20px;
-	font-size: 0; // чтобы не крашился порядок и не вылезало ничего, -решение проблемы с непомещающимися инлайн-блоками (убираем отступы), но дочерним ставим font-size не 0px => строка 19
+	font-size: 0; 
 
 	    @include tablets {
 			margin-left: -2%;
@@ -14,10 +14,10 @@
 .portfolio__item {
 	display: inline-block;
 
-	@include inlineblock (top); // чтобы отталкивались блоки вниз если идет переполнение блока
+	@include inlineblock (top);
 
 	* {
-		font-size: 14px; // т.к. на строке 3 font-size: 0  
+		font-size: 14px;
 	}
 	width: 220px;
 	@include border-radius(10px 9px 9px 10px);

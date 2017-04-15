@@ -7,14 +7,14 @@
 	left: 0; 
 	right: 0;
 	bottom: 0;
-	min-width: 0; //чтобы не соскакивало на строку ниже нужно указать ширину блока .auth
+	min-width: 0;
 	text-align: center;
 	background: url("../../img/bg/auth-pattern.png");
 	&:after {
 		content: "";
 		display: inline-block;
 		vertical-align: middle;
-		height: 100%; //т.к. есть жесткая высота мы можем сделать высоту
+		height: 100%; 
 		width: 0;
 	}
 
@@ -39,7 +39,7 @@
     padding: 80px 60px 20px 60px;
     font-size: 21px;
     position: relative;
-    margin-top: 70px; //чтобы аватарка не заходила за границы
+    margin-top: 70px; 
 }
 
 .auth__avatar {
@@ -49,7 +49,7 @@
 	position: absolute;
 	left: 50%;
 	top: -70px;
-	margin-left: -70px; // размр фото разделили на 2. (140/2)
+	margin-left: -70px; 
 	background-size: cover;
 	background-repeat: no-repeat;
 	@include border-radius(50%);

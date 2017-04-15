@@ -40,7 +40,7 @@
 
 //responsive
 @function rem($px) {
-	@return $px / 16px + 0rem; //16px - это font-size у html, а 0rem - чтобы перевести из пикселей в рем
+	@return $px / 16px + 0rem;
 }
 
 //fonts

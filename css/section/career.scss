@@ -40,7 +40,7 @@
 
 }
 
-.ava-fake {    // для SEO  (можно убрать)
+.ava-fake {    // for SEO  
 	position: absolute;
 	top: 0;
 	left: -9999px;
@@ -53,7 +53,7 @@
 
 .career__item {
 	text-align: right;
-	margin-bottom: 20px; //делаем отступ от внешнего блока, а не от внутреннего!
+	margin-bottom: 20px; 
 
 	&:first-child {
 		.career__block {
@@ -77,14 +77,14 @@
 	}
 }
 
-.career__item { // делаем подсветку при наведении 
+.career__item { 
 	
 	&:hover * {
     color: #fff;
 	}
 
 	&:hover {
-		.career__block{
+		.career__block {
 			background: #33c1e3;
 		}
 			
@@ -111,6 +111,7 @@
 	text-align: left;
 	padding: 15px;
 	transition: .3s;  
+	cursor: pointer;
 
 	&:before, &:after {
 		content:"";
@@ -128,13 +129,13 @@
 	&:before{
 		top: 0;
 		bottom: 50%;
-		margin-bottom: 5px; //раздвигаем
+		margin-bottom: 5px; 
 	}
 
 	&:after{
 		top: 50%;
 		bottom: -22px;
-		margin-top: 5px; //раздвигаем
+		margin-top: 5px; 
 	}
 
 	@include tablets {
@@ -149,29 +150,30 @@
 
 .career__year {
 	position: absolute;
-	right: 100%; // можно left: -85px, но тогда если текста будет много развалится верстка
+	right: 100%;
 	top: 50%;
-	line-height: 14px; //задаем высоту строки для отцентровки
-	margin-top: -8px; //чтобы отцентровать берем половину line-height с минусом (14/2=8px)
+	line-height: 14px; 
+	margin-top: -8px; 
 	margin-right: 45px;
 	color: #727272;
 
 	&:after {
 		content: "";
-		width: 10px;
-		height: 10px;
+		display: block;
+		width: 20px;
+		height: 20px;
 		background: #33c1e3;
-		border-radius: 50%;
+		@include border-radius(50%);
 		position: absolute;
-		right: -25px;
+		right: -26px;
 		top: 50%;
-		margin-top: -10px; //отцентровываем половина высоты height (10/2=5) 
+		margin-top: -10px; 
 		z-index: 1;	
 		border: 5px solid #f6f6f6;
 	}
 
 	@include tablets {
-		display: none;  //скрываем псевдоэлемент на планшетах
+		display: none;
 	}
 }
 

@@ -45,7 +45,7 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	@include border-radius(50%);
-	position: relative; //  у ava-fake position: absolute
+	position: relative;
 
 	@include laptop {
 		margin: 0 auto;
@@ -75,8 +75,8 @@
 	font-size: rem(18px);
 	margin-top: 0;
 	margin-bottom: rem(25px);
-	overflow: auto; // скрыть текст с прокруткой
-	height: rem(290px); //скрыть текст с прокруткой
+	overflow: auto; 
+	height: rem(290px); 
 
 
 }

@@ -3,7 +3,7 @@
 	@include box-shadow(0 1px 3px 0 rgba(#000, .2));
 	
 	
-	margin-bottom: 1.25rem; // 20px(было до адаптива) : 16px( это font-size у html)
+	margin-bottom: 1.25rem;
 	
   @include tablets {
     margin-bottom: rem(35px);
@@ -33,11 +33,11 @@
 }
 
 .user__avatar {
-	@include inlineblock(middle); // inline-block - чтобы обтянуло
+	@include inlineblock(middle); 
 	overflow: hidden;
 	@include border-radius(50%);
-  width: 60px; // устанавливаем размер чтобы можно было установив код на 16 и 17 строке (max-height max-width) можно было исключить выход картинки за пределы этого блока .header__left
-  height: 60px; // устанавливаем размер чтобы можно было установив код на 16 и 17 строке (max-height max-width) можно было исключить выход картинки за пределы этого блока .header__left
+  width: 60px;
+  height: 60px; 
 }
 
 .user__avatar-pic {
@@ -90,7 +90,7 @@
 
     &:hover .contacts__dropdown {
     display: block;
-    animation: fadeIn .8s; //плавное появление дропдауна
+    animation: fadeIn .8s;
      }
 
     @keyframes fadeIn {
@@ -112,24 +112,25 @@
 
     text-indent: 9999px;
     display: inline-block; 
-    white-space: nowrap; //текст в одну строку, чтобы скрыть текст  "Мои контакты" за границами
-    width: 32px;  //чтобы было видно phone.png, т.к. картинка именно с размером 32на32, а все что болье этих размеров скроется благодаря white-space 
-    height: 32px; //чтобы было видно phone.png, т.к. картинка именно с размером 32на32, а все что болье этих размеров скроется благодаря white-space 
+    white-space: nowrap; 
+    width: 32px;  
+    height: 32px;
   }
 }
 
 .contacts__dropdown {
+  position: absolute;
+  display: none;
   padding: 15px 20px;
   background: #fff;
   border: 1px solid #dedede;
   border-radius: 10px;
-  position: absolute;
+  
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
   margin-top: 12px;
-  // display: none;
   transition: border .3s;
 
   @include desktop {
@@ -139,7 +140,7 @@
    @include tablets {
     left: -309%;
   }
-  &:before {   //чтобы дропдаун не проподал при диагональном перемещении мыши на него
+  &:before {  
   	content: "";
   	position: absolute;
   	left: 0;
@@ -168,18 +169,18 @@
   }
 
     &:after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 0;
-    border: 10px solid transparent;
-    border-top-width: 0px;
-    top: -11px;
-    position: absolute;
-    left: 50%;
-    transform: rotate(0deg) skewY(0deg) skewx(-33deg);
-    border-bottom-color: #fff;
-    margin-top: 1px;
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-top-width: 0px;
+      top: -11px;
+      position: absolute;
+      left: 50%;
+      transform: rotate(0deg) skewY(0deg) skewx(-33deg);
+      border-bottom-color: #fff;
+      margin-top: 1px;
     } 
     
 
@@ -205,7 +206,7 @@
 
 
 .contacts__dropdown-link {
-	white-space: nowrap; // чтобы текст в одну строку ( не сбрасываоло на строку ниже не помещающийся текст) 
+	white-space: nowrap;
 	font-size: 18px;
 	font-family: "fira_sanslight";
 	color: #414141;
@@ -236,7 +237,7 @@
 
 .contacts__dropdown-item {
 	margin-bottom: 15px;
-  width: 250px; //чтобы не прыгало окно при hover
+  width: 250px;
 
 
 
