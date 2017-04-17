@@ -6,7 +6,6 @@
 	width: rem(220px);
 	float:left;
 
-
 	@include laptop {
 		text-align: center;
 		width: 100%;
@@ -31,24 +30,19 @@
 	height: 220px;
 	background-size: cover;
 	background-repeat: no-repeat;
+
 	@include border-radius(9px);
 	position: relative;
 
 	@include laptop {
 		margin: 0 auto;
 	}
-
 }
 
 .ava-fake {    // for SEO  
 	position: absolute;
 	top: 0;
 	left: -9999px;
-
-}
-
-.career__list{
-	
 }
 
 .career__item {
@@ -62,7 +56,6 @@
 			}
 		}
 	}
-
 		
 	&:last-child {
 		.career__block {
@@ -99,19 +92,30 @@
 	}
 }
 
-
-
 .career__block {
 	display: inline-block;
 	width: 380px;
 	
 	@include border-radius(9px);
+
 	@include box-shadow(0 1px 3px 0 rgba(#000, .2));
 	position: relative;
 	text-align: left;
 	padding: 15px;
 	transition: .3s;  
 	cursor: pointer;
+
+	&:before {
+		top: 0;
+		bottom: 50%;
+		margin-bottom: 5px; 
+	}
+
+	&:after {
+		top: 50%;
+		bottom: -22px;
+		margin-top: 5px; 
+	}
 
 	&:before, &:after {
 		content:"";
@@ -122,31 +126,15 @@
 		left: -30px;
 
 		@include tablets {
-		display: none;
-	}
-	}
-
-	&:before{
-		top: 0;
-		bottom: 50%;
-		margin-bottom: 5px; 
-	}
-
-	&:after{
-		top: 50%;
-		bottom: -22px;
-		margin-top: 5px; 
-	}
-
-	@include tablets {
-		width: 100%;
-		text-align: left;
-	}
-
-}
-
-
+			display: none;
+		}
 	
+		@include tablets {
+			width: 100%;
+			text-align: left;
+		}
+	}
+}
 
 .career__year {
 	position: absolute;
@@ -163,6 +151,7 @@
 		width: 20px;
 		height: 20px;
 		background: #33c1e3;
+
 		@include border-radius(50%);
 		position: absolute;
 		right: -26px;
@@ -178,7 +167,7 @@
 }
 
 .career__title {
-	font-size: rem(21px);
+	font-size: rem(21px); 
     color: #5a5a5a;
     margin-bottom: rem(5px);
 }

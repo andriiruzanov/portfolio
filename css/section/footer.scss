@@ -1,18 +1,12 @@
-
-
 .footer {
-
 	background: #414141;
+
 	@include desktop {
 		min-width: 0px;
 	}
-
-	
 }
 
-
 .footer {
-
 	@include tablets {
 		height: 95px;
     	margin-top: -95px;
@@ -20,18 +14,12 @@
 	}
 }
 
-
-
-
-
 .footer__left, .footer__right {
 	
 	@include tablets {
     	float: none;
     	width: 100%;
    }
-
-	
 }
 
 .footer__left {
@@ -54,7 +42,7 @@
   }
 }
 
-.footer__right{
+.footer__right {
 	text-align: right;
 }
 
@@ -68,7 +56,6 @@
     	position: static;
     	text-align: center;
 	}
-
 }
 
 .socials__item {
@@ -78,8 +65,6 @@
 	&:nth-child(1) {
 		margin-left: 0;
 	}
-
-	
 }
 
 .socials__link {
@@ -94,10 +79,9 @@
 		font-size: 25px;
 
 		&:hover {
-		color: #33c1e3;
+			color: #33c1e3;
 		}
 	}
-	
 }
 
 // @each $social in (vk, fb, tw) {

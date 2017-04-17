@@ -63,9 +63,6 @@ body {
 .maincontent {
   padding-bottom: 50px; }
 
-
-
-
 // для прибития футера
 
 footer {
@@ -75,8 +72,6 @@ footer {
   margin-top: -$footer-height;
   position: relative;
   min-width: $container-width + 20px; }
-
-
 
 .container {
   width: $container-width;
@@ -91,24 +86,17 @@ footer {
 
 
   @include laptop {
-    width: 768px;
-    
-    
-        
+    width: 768px; 
   }
 
   @include tablets {
     width: 460px;
     padding: 0px 20px;
-  
-  }
+   }
 
   @include phones {
     width: auto;
-  
   }
-
-
 }
 
 // tag styles reset
@@ -125,7 +113,6 @@ p {
   margin-top: 0;
   margin-bottom: 0;
 }
-
 
 // устойчивость верстки при изменении тегов сеошником
 h1, h2, h3, h4, h5, h6 {

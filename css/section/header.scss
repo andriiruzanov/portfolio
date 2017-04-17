@@ -12,16 +12,15 @@
 	.container {
 		height: 80px;
 		position: relative;
+
 		@extend %clearfix;
 	}
 }
 
 .header__left, .header__right {
-	float: left;
+  float: left;
 	width: 50%;
 }
-
-
 
 .header__right {
 	text-align: right;
@@ -29,12 +28,17 @@
 
 .user {
 	margin-top: 10px;
+}
 
+.user__link {
+  text-decoration: none;
+  color: inherit;
 }
 
 .user__avatar {
 	@include inlineblock(middle); 
 	overflow: hidden;
+
 	@include border-radius(50%);
   width: 60px;
   height: 60px; 
@@ -47,15 +51,14 @@
 }
 
 .user__name {
-
 	@include inlineblock(middle);
-	max-width: rem(250px);
+    max-width: rem(250px);
     font-size: rem(18px);
     margin-left: rem(15px);
 
     @include phones {
-    max-width: rem(100px);
-    width: 40%;
+      max-width: rem(100px);
+      width: 40%;
     }
 }
 
@@ -64,15 +67,12 @@
  	display: inline-block;
   position: relative;
 
-
   	&:hover .contacts__trigger {
     background: url('../img/decor/dotted-border-hover.png') 0 bottom repeat-x;
     color: #e85f61; 
 
     @include tablets {
-
       background: url('../img/icons/phone-active.png') center no-repeat;
-      
     }
 	}
     .contacts__trigger {
@@ -82,11 +82,7 @@
 
         background: url('../img/icons/phone.png') center no-repeat;
       }
-
     }
-
-
-
 
     &:hover .contacts__dropdown {
     display: block;
@@ -140,6 +136,7 @@
    @include tablets {
     left: -309%;
   }
+
   &:before {  
   	content: "";
   	position: absolute;
@@ -152,7 +149,6 @@
 }
 
 .contacts__dropdown-triangle-list {
-
 
   &:before {
     content: "";
@@ -190,8 +186,7 @@
     @include tablets {
       left: 85%;
     }
-
-	}
+}
 
   	
  //  	&:before {
@@ -203,8 +198,6 @@
  //    margin-top: 1px; 
 	// }
 
-
-
 .contacts__dropdown-link {
 	white-space: nowrap;
 	font-size: 18px;
@@ -214,7 +207,6 @@
 	text-align: left;
 	display: block;
   
-
  &:hover {
   font-weight: bold;
   @include transition(font-weight .3s);
@@ -239,17 +231,7 @@
 	margin-bottom: 15px;
   width: 250px;
 
-
-
 	&:last-child {
 		margin-bottom: 0;
 	}
 }
-
-
-
-
-
-
-
-

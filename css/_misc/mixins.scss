@@ -17,9 +17,6 @@
 	transition: $trans;
 }
 
-
-
-
 %clearfix {
 	&:after {
 		content: "";
@@ -39,6 +36,7 @@
 }
 
 //responsive
+
 @function rem($px) {
 	@return $px / 16px + 0rem;
 }
@@ -63,6 +61,7 @@
     }
 
 }
+
 // media request!
 
 @mixin desktop {
@@ -77,13 +76,11 @@
 	}
 }
 
-
 @mixin tablets {
 	@media screen and (max-width: 768px) {
 		@content;
 	}
 }
-
 
 @mixin phones {
 	@media screen and (max-width: 480px) {

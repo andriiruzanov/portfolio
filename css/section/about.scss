@@ -1,6 +1,5 @@
 .about{
 	@extend %clearfix;
-	
 }
 
 .about__left{
@@ -17,9 +16,7 @@
 		width: 100%;
 		float: none;
 		margin: 0 auto rem(15px);
-
 		}
-
 }
 
 .about__right{
@@ -28,15 +25,12 @@
 
 	@include laptop {
 		width: rem(290px);
-
 	}
 
 	@include tablets {
 		width: 100%;
 		float: none;
-		}
-
-	
+	}
 }
 
 .about__pic {
@@ -44,13 +38,13 @@
 	height: 220px;
 	background-size: cover;
 	background-repeat: no-repeat;
+	
 	@include border-radius(50%);
 	position: relative;
 
 	@include laptop {
 		margin: 0 auto;
 	}
-
 }
 
 // .about__pic-img{
@@ -64,6 +58,7 @@
 	color: $black;
 	line-height: rem(38px);
 	margin-bottom: rem(25px);
+
 	@include fira(medium);
 
 	@include laptop {
@@ -77,14 +72,13 @@
 	margin-bottom: rem(25px);
 	overflow: auto; 
 	height: rem(290px); 
-
-
 }
 
 .text-block {
 	color: #646464;
 	font-size: rem(18px);
 	line-height: 24px;
+
 	@include fira(light); 
 
 	p {
@@ -92,10 +86,14 @@
 		margin-bottom: rem(10px);
 	}
 }
+	
+.about__list {
+	list-style-type: disc;
+	margin-top: 10px;
+}
 
 .about__download {
 	text-align: right;
-
 
 	@include tablets {
 		text-align: center;
@@ -116,6 +114,4 @@
 		color: #fff;
 		background: $red;
 	}
-
-
 }

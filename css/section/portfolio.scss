@@ -20,7 +20,9 @@
 		font-size: 14px;
 	}
 	width: 220px;
+
 	@include border-radius(10px 9px 9px 10px);
+
 	@include box-shadow(0 1px 3px rgba(0, 0, 0, 0.2));
 	overflow: hidden;
 	margin-left: 20px;
@@ -40,15 +42,12 @@
 		box-shadow: 0 4px 4px $grey;
 		transition: .3s;
 	}
-
-
 }
 
 .portfolio__link {
 	display: block;
 	text-decoration: none;
 }
-
 
 .portfolio__pic {
 	background-size: cover;
@@ -85,6 +84,7 @@
 
 .portfolio-icon {
 	display: inline-block;
+
 	@include inlineblock (middle);
 	width: 12%;
 	text-align: center;
@@ -97,7 +97,7 @@
 
 .portfolio-text {
 	display: inline-block;
+
 	@include inlineblock (middle);
 	width: 85%;
-	
 }
